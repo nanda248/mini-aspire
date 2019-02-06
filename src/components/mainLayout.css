@@ -1,0 +1,7 @@
+.card-btn:hover {
+    cursor: pointer;
+}
+
+.no-padding {
+    padding: 0px;
+}
