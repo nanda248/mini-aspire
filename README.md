@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mini Aspire by Nan Da
 
-## Available Scripts
+This is a technical assessment requested by Aspire Capital.
+Main functionalities of this project include:
+  - Submit loans
+  - Approve or Deny loans
+  - Repay loans
 
-In the project directory, you can run:
+## Technology Stack
+The project was developed using below libraries and frameworks:
+* [ReactJS](https://reactjs.org/) - A Javascript library for building user interfaces
+* [Materialize](https://materializecss.com/) - A modern responsive front-end framework based on material design
+* [sweetalert](https://sweetalert.js.org/) - A library to display error and warning popups beautifully
+* [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node
+* [JSON Server](https://github.com/typicode/json-server) - Get a full fake REST API with zero coding in less than 30 seconds.
 
-### `npm start`
+### Installation and Setup
+The project requires [Node.js](https://nodejs.org/) to run.
+Versions during this project development: NodeJS v8.11.4 & npm 6.4.1
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone the repo:
+```
+git clone https://github.com/nanda248/mini-aspire.git
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Install the dependencies and start the server:
 
-### `npm test`
+```sh
+$ cd nanda-easy-gallery
+$ npm install
+$ npm start
+```
+Then the server should be running on http://localhost:3000/
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Peoject Summary
+It is a simple POC front-end web app where user can submit loan. User can also approve and deny loans. User can also repay the loans.
 
-### `npm run build`
+**Limitations**
+Since the project has no backend and DB, all data will be refreshed to initial state when the page is reloaded. There are no state management library and routers used because it is a single page application with very minimal state manipulation. 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+License
+----
+Copyright of NanDa
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
