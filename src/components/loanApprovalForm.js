@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../api/fakeApi';
 import moment from 'moment';
+import swal from 'sweetalert';
 import './mainLayout.css';
 
 class LoanApprovalForm extends Component {
@@ -26,6 +27,7 @@ class LoanApprovalForm extends Component {
         })
         .catch((err) => {
             console.log(err);
+            swal({title: "Connection error.", icon: "warning"});
         })
     }
 
@@ -74,6 +76,7 @@ class LoanApprovalForm extends Component {
                                         <ul>
                                             <li>Amount: $ {loan.amount}</li>
                                             <li>Date: {moment(loan.created_at).format("Do MMM YY, h:mm a")}</li>
+                                            <li>Weekly repay amount: $ {loan.repay_amount}</li>
                                         </ul>
                                     </div>
                                     <div className="card-action">

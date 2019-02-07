@@ -26,7 +26,7 @@ git clone https://github.com/nanda248/mini-aspire.git
 Install the dependencies and start the server:
 
 ```sh
-$ cd nanda-easy-gallery
+$ cd mini-aspire
 $ npm install
 $ npm start
 ```

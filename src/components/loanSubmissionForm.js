@@ -11,12 +11,14 @@ class LoanSubmissionForm extends Component {
         this.state = {
             name: '',
             amount: '',
-            term: ''
+            term: '',
+            repay_amount: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeAmount = this.handleChangeAmount.bind(this);
         this.handleLoanTermChange = this.handleLoanTermChange.bind(this);
+        this.handleChangeRepayAmount = this.handleChangeRepayAmount.bind(this);
     }
 
     componentDidMount() {
@@ -37,6 +39,11 @@ class LoanSubmissionForm extends Component {
         this.setState({amount: amount})
     }
 
+    handleChangeRepayAmount(event) {
+        const amount = this.convertToCurrency(event.target.value)
+        this.setState({repay_amount: amount})
+    }
+
     convertToCurrency(value) {
         // replace multiple dots with a single dot
         value = value.replace(/\.+/g,'.');
@@ -51,8 +58,9 @@ class LoanSubmissionForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        const { name, amount, term } = this.state;
-        console.log("Submitting . . .", name, amount, term)
+        let { name, amount, term, repay_amount } = this.state;
+        amount = parseFloat(amount);
+        repay_amount = parseFloat(repay_amount);
         if(name === '') {
             swal({title: "Username cannot be empty.", icon: "warning"});
             return
@@ -65,13 +73,20 @@ class LoanSubmissionForm extends Component {
         } else if(amount > 10000) {
             swal({title: "Loan amount cannot be more than 10000", icon: "warning"});
             return
+        } else if(repay_amount > amount) {
+            swal({title: "Repay amount cannot be greater than loan amount.", icon: "warning"});
+            return
         }
         api.post('loan', {
             amount: amount,
             username: name,
             loan_term: term,
             status: "pending",
-            created_at: moment().format()
+            created_at: moment().format(),
+            repay_amount: repay_amount,
+            paid: 0,
+            repaid: false,
+            repay_history: []
         })
         .then((res) => {
             console.log("res", res)
@@ -79,12 +94,15 @@ class LoanSubmissionForm extends Component {
                 swal({title: "Loan submitted successfully.", icon: "success"});
                 this.setState({
                     name: '',
-                    amount: 0
+                    amount: '',
+                    term: "0",
+                    repay_amount: ''
                 })
             }
         })
         .catch((err) => {
             console.log(err);
+            swal({title: "Connection error.", icon: "warning"});
         })
 
     }
@@ -100,12 +118,18 @@ class LoanSubmissionForm extends Component {
                     </div>
                 <div className="input-field col s6">
                     <select defaultValue="0" onChange={this.handleLoanTermChange}>
-                        <option value="0" disabled>Choose Loan Term(s)</option>
-                        <option value="daily">Daily</option>
-                        <option value="weekly">Weekly</option>
-                        <option value="monthly">Monthly</option>
+                        <option value="0" disabled>Choose Loan Term </option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                        <option value="4">4 Years</option>
+                        <option value="5">5 Years</option>
+                        <option value="6">6 Years</option>
+                        <option value="7">7 Years</option>
+                        <option value="8">8 Years</option>
+                        <option value="9">9 Years</option>
+                        <option value="10">10 Years</option>
                     </select>
-                    <label>Loan Terms</label>
+                    <label>Loan Terms (min 2 years - max 10 years)</label>
                 </div>
                 </div>
 
@@ -113,6 +137,13 @@ class LoanSubmissionForm extends Component {
                 <div className="input-field col s6">
                     <label htmlFor="loan-amount">Loan Amount (Max. $10,000)</label>
                     <input id="loan-amount" type="number" className="validate" value={this.state.amount} onChange={this.handleChangeAmount} />   
+                </div>
+                </div>
+
+                <div className="row">
+                <div className="input-field col s6">
+                    <label htmlFor="repay-amount">Repay Amount (Weekly)</label>
+                    <input id="repay-amount" type="number" className="validate" value={this.state.repay_amount} onChange={this.handleChangeRepayAmount} />   
                 </div>
                 </div>
 
