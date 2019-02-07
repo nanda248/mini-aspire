@@ -41,11 +41,11 @@ Then the JSON server should be running on http://localhost:3000/ and react shoul
 
 
 ### Peoject Summary
-It is a single page application where user can submit loan. User can also approve and deny loans. User can also repay the loans. There are 4 main modules:
-**Submit Loan** - User can submit loan by filling in the fields. Repay amount cannot be more than loan amount. Maximum loan amount is $10,000.
-**Approve or Deny** - User can approve or deny submitted claims.
-**All Loans** - User can view all the loans, whether it is approved or denied or pending or fully paid. User can also repay approved loans on this page.
-**Repay History** - User can view repay history of each approved loans.
+It is a single page application where user can submit loan. User can also approve and deny loans. User can also repay the loans. There are 4 main modules:  
+**Submit Loan** - User can submit loan by filling in the fields. Repay amount cannot be more than loan amount. Maximum loan amount is $10,000.  
+**Approve or Deny** - User can approve or deny submitted claims.  
+**All Loans** - User can view all the loans, whether it is approved or denied or pending or fully paid. User can also repay approved loans on this page.  
+**Repay History** - User can view repay history of each approved loans.  
 
 **Limitations**
 There are no state management library and routers used because it is a single page application with very minimal state manipulation. 
