@@ -17,7 +17,7 @@
     {
       "id": 1,
       "amount": 100,
-      "paid": 96,
+      "paid": 100,
       "loan_term": "3",
       "username": "Nan Da",
       "status": "approved",
@@ -28,6 +28,10 @@
         {
           "repay_amount": 24,
           "created_at": "2019-02-07T23:19:14+08:00"
+        },
+        {
+          "repay_amount": 4,
+          "created_at": "2019-02-08T00:36:12+08:00"
         }
       ]
     },
@@ -59,7 +63,7 @@
       "amount": 100,
       "username": "Crystal Win",
       "loan_term": "4",
-      "status": "pending",
+      "status": "denied",
       "created_at": "2019-02-08T00:20:08+08:00",
       "repay_amount": 25,
       "paid": 0,
@@ -71,13 +75,112 @@
       "amount": 999,
       "username": "Samuel",
       "loan_term": "7",
-      "status": "pending",
+      "status": "approved",
       "created_at": "2019-02-08T00:20:26+08:00",
       "repay_amount": 123,
+      "paid": 123,
+      "repaid": false,
+      "repay_history": [
+        {
+          "repay_amount": 123,
+          "created_at": "2019-02-08T00:36:06+08:00"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "amount": 4500,
+      "username": "Red Bull",
+      "loan_term": "2",
+      "status": "pending",
+      "created_at": "2019-02-08T00:32:07+08:00",
+      "repay_amount": 200,
       "paid": 0,
       "repaid": false,
       "repay_history": [],
-      "id": 5
+      "id": 6
+    },
+    {
+      "amount": 999,
+      "username": "Jack Ma",
+      "loan_term": "4",
+      "status": "denied",
+      "created_at": "2019-02-08T00:33:50+08:00",
+      "repay_amount": 34,
+      "paid": 0,
+      "repaid": false,
+      "repay_history": [],
+      "id": 7
+    },
+    {
+      "amount": 1234,
+      "username": "Steven Gerrard",
+      "loan_term": "10",
+      "status": "approved",
+      "created_at": "2019-02-08T00:34:40+08:00",
+      "repay_amount": 250,
+      "paid": 500,
+      "repaid": false,
+      "repay_history": [
+        {
+          "repay_amount": 250,
+          "created_at": "2019-02-08T00:36:02+08:00"
+        },
+        {
+          "repay_amount": 250,
+          "created_at": "2019-02-08T00:36:04+08:00"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "amount": 5000,
+      "username": "Ronaldo",
+      "loan_term": "8",
+      "status": "pending",
+      "created_at": "2019-02-08T00:35:09+08:00",
+      "repay_amount": 100,
+      "paid": 0,
+      "repaid": false,
+      "repay_history": [],
+      "id": 9
+    },
+    {
+      "amount": 450,
+      "username": "Mohamad Salah",
+      "loan_term": "7",
+      "status": "approved",
+      "created_at": "2019-02-08T00:35:42+08:00",
+      "repay_amount": 23,
+      "paid": 69,
+      "repaid": false,
+      "repay_history": [
+        {
+          "repay_amount": 23,
+          "created_at": "2019-02-08T00:36:52+08:00"
+        },
+        {
+          "repay_amount": 23,
+          "created_at": "2019-02-08T00:37:02+08:00"
+        },
+        {
+          "repay_amount": 23,
+          "created_at": "2019-02-08T00:37:04+08:00"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "amount": 5500,
+      "username": "Firmino",
+      "loan_term": "6",
+      "status": "pending",
+      "created_at": "2019-02-08T00:36:38+08:00",
+      "repay_amount": 234,
+      "paid": 0,
+      "repaid": false,
+      "repay_history": [],
+      "id": 11
     }
   ]
 }

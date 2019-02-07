@@ -38,7 +38,7 @@ class MainLayout extends Component {
                         <div className="card card-btn hoverable" 
                             onClick={() => this.setState({showComponent: 'loanSubmissionForm'})}
                             style={{backgroundColor: this.state.showComponent === 'loanSubmissionForm' ?  colors.secondaryColor: '#F5F5F5'}}>
-                            <div className="card-title">Submit Loans</div>
+                            <div className="card-title">Submit Loan</div>
                         </div>
                     </div>
                     <div className="col s3">

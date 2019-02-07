@@ -30,7 +30,7 @@ class RepayHistory extends Component {
             return (
                 <div className="col s12">
                     <ul style={{textAlign: 'left'}}>
-                        <li><h4>{loan.username}</h4></li>
+                        <li><h4>{loan.username} <span style={{fontSize: '0.6em'}}>loaned ${loan.amount}</span></h4></li>
                         {
                             loan.repay_history.map((repay_history) => {
                                 return (

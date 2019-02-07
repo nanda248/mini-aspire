@@ -5,6 +5,7 @@ Main functionalities of this project include:
   - Submit loans
   - Approve or Deny loans
   - Repay loans
+  - Display repay history
 
 ## Technology Stack
 The project was developed using below libraries and frameworks:
@@ -23,20 +24,31 @@ Clone the repo:
 git clone https://github.com/nanda248/mini-aspire.git
 ```
 
-Install the dependencies and start the server:
-
+Install the dependencies:
 ```sh
 $ cd mini-aspire
+$ npm install -g json-server
 $ npm install
+```
+Ensure that JSON-server is installed properly by checking version by running `json-server -v`.
+Start JSON-Server and React Client on port 3000 and port 3001 respectively:
+```sh
+$ json-server --watch db.json
 $ npm start
 ```
-Then the server should be running on http://localhost:3000/
+
+Then the JSON server should be running on http://localhost:3000/ and react should be running on http://localhost:3001/
+
 
 ### Peoject Summary
-It is a simple POC front-end web app where user can submit loan. User can also approve and deny loans. User can also repay the loans.
+It is a single page application where user can submit loan. User can also approve and deny loans. User can also repay the loans. There are 4 main modules:
+**Submit Loan** - User can submit loan by filling in the fields. Repay amount cannot be more than loan amount. Maximum loan amount is $10,000.
+**Approve or Deny** - User can approve or deny submitted claims.
+**All Loans** - User can view all the loans, whether it is approved or denied or pending or fully paid. User can also repay approved loans on this page.
+**Repay History** - User can view repay history of each approved loans.
 
 **Limitations**
-Since the project has no backend and DB, all data will be refreshed to initial state when the page is reloaded. There are no state management library and routers used because it is a single page application with very minimal state manipulation. 
+There are no state management library and routers used because it is a single page application with very minimal state manipulation. 
 
 License
 ----
