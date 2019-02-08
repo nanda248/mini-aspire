@@ -89,7 +89,6 @@ class LoanSubmissionForm extends Component {
             repay_history: []
         })
         .then((res) => {
-            console.log("res", res)
             if(res.request.statusText === "Created") {
                 swal({title: "Loan submitted successfully.", icon: "success"});
                 this.setState({

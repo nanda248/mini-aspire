@@ -22,7 +22,6 @@ class LoanApprovalForm extends Component {
         .then((res) => {
             const loans = res.data;
             const pendingLoans = loans.filter((loan) => loan.status === "pending")
-            console.log("pending loans: ", pendingLoans)
             this.setState({pendingLoans})
         })
         .catch((err) => {
@@ -32,12 +31,10 @@ class LoanApprovalForm extends Component {
     }
 
     handleApprove(id) {
-        console.log("approve this loan")
         api.patch(`loan/${id}/`, {
             status: "approved"
         })
         .then((res) => {
-            console.log("updating loans approve: ", res)
             this.updateLoans();
         })
         .catch((err) => {
@@ -46,12 +43,10 @@ class LoanApprovalForm extends Component {
     }
 
     handleDeny(id) {
-        console.log("deny this loan")
         api.patch(`loan/${id}/`, {
             status: "denied"
         })
         .then((res) => {
-            console.log("updating loans denied: ", res)
             this.updateLoans();
         })
         .catch((err) => {
